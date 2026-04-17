@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ethical Challenges | Recommender Systems | CS1102</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
+        .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.3rem; font-weight: bold; background: #3b82f6; padding: 0.3rem 0.8rem; border-radius: 8px; }
+        .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
+        .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
+        .nav-links a:hover { color: #60a5fa; }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; background: none; border: none; color: white; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .section-card { background: white; border-radius: 20px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; }
+        .section-card h1 { color: #0f172a; border-left: 5px solid #3b82f6; padding-left: 1rem; margin-bottom: 1.2rem; font-size: 1.8rem; }
+        .section-card h2 { color: #0f172a; margin: 1rem 0 0.5rem 0; font-size: 1.4rem; }
+        p { margin-bottom: 1rem; color: #334155; }
+        .references-box { background: #fef9e3; padding: 1rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid #eab308; font-size: 0.85rem; }
+        .references-box p { margin: 0.3rem 0; }
+        .image-container { margin: 1rem 0; text-align: center; }
+        .image-container img { max-width: 100%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .container { padding: 0 1rem; } }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="large-scale.html">Large-Scale</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="modern.html">Modern Tech</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="ethical.html">Ethical</a></li>
+            <li><a href="funfact.html">Fun Fact</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container">
+    <div class="section-card">
+        <h1>⚠️ 6. ETHICAL CHALLENGES</h1>
+        <h2>Privacy vs Accuracy</h2>
+        <p>In order to enhance the users' experiences and customers' journal, many online shopping platforms used recommendation systems to personalize users' experience. These platforms have collected many personal information of the users such as what they like, buy and watch. When the recommendation systems are more well-developed, privacy-personalized trade-offs appear (Ojokoh et al., 2025). Collecting more users' data increases the recommendation accuracy, while the breach risks increase. Companies are facing ethical challenges which are choosing high accuracy with high potential data leaks or worsening personalized user experience with minimizing data collection.</p>
+        
+        <p>Last year, a serious personal data leak of Coupang showed the awful consequences of large-scale data collection. Coupang is the biggest e-commerce platform in South Korea, called the "Amazon of Korea". An employee stole its data leading to 33.7 million customers accounts leakage which affected more than 50% of South Korea population (Chia, 2025). Phone number, email address, name, email address, order history and users' name were all exposed (Chia, 2025). Park (2025) indicated that many Coupang accounts are sold in Taobao for around RMB 23 to 183, approximately 5,000 to 40,000 Korean won. Moreover, Coupang users received many scams calls and messages after the data leakage.</p>
+
+        <p>Although recommendation systems provide better user experiences and more profits for operations, it is a double-edged sword. The data breach could cause unpredictable losses.</p>
+        
+       </div>
+            <div class="image" style="text-align: center;">
+        <a href="https://www.koreaherald.com/article/10630311" target="_blank">
+        <img src="news-p.v1.20251205.724d894195e74787b2b45461a939cf73_P1.jpg" width= "600px" alt=" Price of Coupang accounts sold in Taobao">
+       </a>
+        <figcaption style="font-size: 0.75rem; color: #666; text-align: center; margin-top: 0.5rem;">
+       (Ji-Hye, 2025)
+        </figcaption>
+        
+        
+        
+        <div class="references-box" style="text-align: left;">
+            <p><strong>📚 References:</strong></p>
+            <p>Chia, O. (2025, December 1). South Korea: Online retail giant Coupang hit by massive data leak. BBC. https://www.bbc.com/news/articles/c36zwywll02o</p>
+            <p>Ojokoh, B. A., Isinkaye, F. O., Zhang, M., Tom, J. J., Gabriel, A. J., Afolabi, O., & Afolabi, B. (2025). Privacy and security in recommenders: an analytical review. Artificial Intelligence Review, 58(11). https://doi.org/10.1007/s10462-025-11333-4</p>
+            <p>Park. S. M. (2025c, December 3). Coupang denies Chinese account sales linked to data breach. The Chosun Daily. https://www.chosun.com/english/national-en/2025/12/03/JIEPPVOGFFHPTO6QBXHHJGMU4M/</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+    }
+</script>
+</body>
+</html>

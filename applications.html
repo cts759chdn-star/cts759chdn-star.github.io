@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Applications | Recommender Systems | CS1102</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
+        .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.3rem; font-weight: bold; background: #3b82f6; padding: 0.3rem 0.8rem; border-radius: 8px; }
+        .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
+        .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
+        .nav-links a:hover { color: #60a5fa; }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; background: none; border: none; color: white; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .section-card { background: white; border-radius: 20px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; }
+        .section-card h1 { color: #0f172a; border-left: 5px solid #3b82f6; padding-left: 1rem; margin-bottom: 1.2rem; font-size: 1.8rem; }
+        .section-card h2 { color: #0f172a; margin: 1rem 0 0.5rem 0; font-size: 1.4rem; }
+        p { margin-bottom: 1rem; color: #334155; }
+        .references-box { background: #fef9e3; padding: 1rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid #eab308; font-size: 0.85rem; }
+        .references-box p { margin: 0.3rem 0; }
+        footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .container { padding: 0 1rem; } }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+       
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="large-scale.html">Large-Scale</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="modern.html">Modern Tech</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="ethical.html">Ethical</a></li>
+            <li><a href="funfact.html">Fun Fact</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container">
+    <div class="section-card">
+        <h1>🏢 5. CASE STUDIES</h1>
+        
+        <h2>5.1 E-commerce (Amazon)</h2>
+        <p>In order to provide consistent shopping experience, the role of recommendation systems has become crucial for online retailers (Pushya Chaparala et al., 2023) like Amazon and Alibaba. They leverage recommender systems to drive cross-selling and customer retention. Their "customers who bought this also bought" and "frequently bought together" feature is a classic application of item-based collaborative filtering.</p>
+        <p>Amazon incorporates sophisticated machine learning techniques, which analyses user information including purchase history, product ratings and browsing patterns. Amazon also combines CBF and CB to make more accurate and personalized product recommendations. It ensures user engagement and revenue. (Narendran & Syedsafi, 2025)</p>
+        
+        <h2>5.2 Streaming (Netflix)</h2>
+        <p>Netflix utilizes a hybrid recommender system that blends collaborative filtering (patterns in user behavior), content-based filtering (specific movie attributes), and advanced machine learning techniques such as deep learning models (Paranjape et al., 2023). Netflix curates personalized homepages for millions of users, combining viewing history with deep-tagging of content metadata. It enhanced user engagement, resulting in longer viewing hours and higher satisfaction levels (Paranjape et al., 2023).</p>
+        
+        <h2>5.3 Social Media (TikTok)</h2>
+        <p>Platforms like TikTok and Instagram use real-time large-scale recommendation engines to distribute content and maximize engagement. Their algorithms must process multimodal data including video content, music, and real-time interaction signals to update user feeds instantly.</p>
+        <p>TikTok uses algorithms to recommend videos directly to its consumers, focusing on content. TikTok efficiently collects user interaction data such as video views, likes, comments, and shares. The features of TikTok recommendation are powerful data processing capability, effective content allocation, and precise user resonance exploration (Wang, 2022).</p>
+        
+        <div class="references-box">
+            <p><strong>📚 References:</strong></p>
+            <p>Narendran M, Mr. S. Syedsafi (2025). Personalized Product Recommendation System for Amazon. https://www.ijraset.com/best-journal/personalized-product-recommendation-system-for-amazon</p>
+            <p>Paranjape, V., Sharma, S., & Hasan, Z. (2023). Enhancing User Engagement through Hybrid Algorithms in Movie Recommendation Systems. International Journal of Innovative Research in Computer and Communication Engineering, 11(11), 4466-4470. https://doi.org/10.15680/ijircce.2023.1111058</p>
+            <p>Pushya Chaparala, Lalitha Sri Akurathi, Prasanna Bandalapati, & Srilakshmi Akkala. (2023). Exploring Collaborative Filtering Methods for Product Recommendations in E-Commerce: A Study Using Amazon and BigBasket Datasets. https://doi.org/10.1109/icccnt56998.2023.10307285</p>
+            <p>Wang, P. (2022). Recommendation Algorithm in TikTok: Strengths, Dilemmas, and Possible Directions. International Journal of Social Science Studies, 10(5), 60-66. https://redfame.com/journal/index.php/ijss/article/view/5664/5849</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+    }
+</script>
+</body>
+</html>

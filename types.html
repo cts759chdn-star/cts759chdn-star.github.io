@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Types | Recommender Systems | CS1102</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
+        .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.3rem; font-weight: bold; background: #3b82f6; padding: 0.3rem 0.8rem; border-radius: 8px; }
+        .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
+        .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
+        .nav-links a:hover { color: #60a5fa; }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; background: none; border: none; color: white; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .section-card { background: white; border-radius: 20px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; }
+        .section-card h1 { color: #0f172a; border-left: 5px solid #3b82f6; padding-left: 1rem; margin-bottom: 1.2rem; font-size: 1.8rem; }
+        .section-card h2 { color: #0f172a; margin: 1rem 0 0.5rem 0; font-size: 1.4rem; }
+        p { margin-bottom: 1rem; color: #334155; }
+        ul { margin: 0.5rem 0 1rem 2rem; }
+        .references-box { background: #fef9e3; padding: 1rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid #eab308; font-size: 0.85rem; }
+        .references-box p { margin: 0.3rem 0; }
+        footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .container { padding: 0 1rem; } }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="large-scale.html">Large-Scale</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="modern.html">Modern Tech</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="ethical.html">Ethical</a></li>
+            <li><a href="funfact.html">Fun Fact</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container">
+    <div class="section-card">
+        <h1>🧩 3. TYPES OF RECOMMENDER SYSTEMS</h1>
+        
+        <h2>1.3 Collaborative Filtering</h2>
+        <p>Collaborative Filtering (CF) groups users based on similar behavior and preferences to provide personalized recommendation. CF can be classified as Memory-based. This kind of system directly uses all the raw data in memory to make recommendations, which directly compares the data. Its recommendation is to rely on similarity between users or items.</p>
+        <ul>
+            <li><strong>User-based Collaborative Filtering:</strong> It identifies users with similar interests or purchase histories to the target user. This could be "users who are similar to you also liked..." type of recommendations.</li>
+            <li><strong>Item-based Collaborative Filtering:</strong> It identifies items that are similar to the ones the target users have interested or purchased. This can include "users who like this item also liked..." type of recommendations.</li>
+        </ul>
+        
+        <h2>3.2 Content-Based Filtering</h2>
+        <p>Content-Based Filtering (CBF) recommends other items similar to those a user has liked in the past, based on item features and users previous interactions. It does not compare users' preferences to other users' preferences. This approach relies on the content or characteristics of each item (Mishara et al., 2022)</p>
+        
+        <h2>3.3 Hybrid Approaches</h2>
+        <p>Hybrid Approaches combine two or more approaches to provide more accurate and effective personalized recommendations. It mitigates the limitations of individual approaches.</p>
+        <p>The most common combination is Collaborative Filtering and Content-based Filtering. This approach leverages user interaction data of collaborative filtering with the item attribute analysis of content-based filtering.</p>
+        <p>CF excels when abundant user-item interaction data is available, while CBF is crucial for addressing new or sparsely rated items. However, as the number of users and items scales to millions to billions, traditional Collaborative Filtering fails to meet the millisecond-level needs, because these simple algorithms are unable to deal with massive data volume. To address these limitations, hybrid CF-CBF systems have emerged as a leading strategy, they systematically mitigate cold-start issues while enhancing accuracy and diversity (Thorat et al., 2015).</p>
+        
+        <div class="references-box">
+            <p><strong>📚 References:</strong></p>
+            <p>Mishra, S., Hrudaya Kumar Tripathy, Pradeep Kumar Mallick, Arun Kumar Sangaiah, & Chae, G.-S. (2022). Cognitive big data intelligence with a metaheuristic approach. Academic Press. https://www.sciencedirect.com/book/edited-volume/9780323851176/cognitive-big-data-intelligence-with-a-metaheuristic-approach</p>
+            <p>Thorat, P., Goudar, R., & Barve, S. (2015). Survey on Collaborative Filtering, Content-based Filtering and Hybrid Recommendation System. International Journal of Computer Applications, 110(4), 975-8887. https://research.ijcaonline.org/volume110/number4/pxc3900760.pdf</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Large-Scale Recommender Systems | CS1102 Course Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e2a3e;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+
+        /* Header / Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: #3b82f6;
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #f1f5f9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero / intro section */
+        .hero {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-info {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .member-info p {
+            margin: 0.3rem 0;
+        }
+
+        .tech-list {
+            background: #eef2ff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.1s ease;
+        }
+
+        .section-card h2 {
+            color: #0f172a;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+        }
+
+        .section-card h3 {
+            color: #1e40af;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .references-box {
+            background: #fef9e3;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #eab308;
+            font-size: 0.85rem;
+        }
+
+        .references-box p {
+            margin: 0.3rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #0f172a;
+            color: #cbd5e1;
+            margin-top: 2rem;
+        }
+
+        button, .quiz-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        .fun-fact-box {
+            background: #fef2f2;
+            border-radius: 16px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .image-container {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .two-column {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .two-column .text {
+            flex: 2;
+        }
+
+        .two-column .image {
+            flex: 1;
+        }
+
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1rem;
+                gap: 0.8rem;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .two-column {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="large-scale.html">Large-Scale</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="modern.html">Modern Tech</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="ethical.html">Ethical</a></li>
+            <li><a href="funfact.html">Fun Fact</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Homepage required info: topic, members, techniques -->
+    <div class="hero">
+        <h1>📊 Large-Scale Recommender Systems in Business Applications</h1>
+        <div class="subtitle">CS1102 - Course Project - 2025 / 2026 Semester B</div>
+        <div class="member-info">
+            <p><strong>👥 Group Members:</strong></p>
+            <p>📌 Lui Wing Yan (Student ID: 59288140) &nbsp;|&nbsp; 
+               📌 Tong Hoi Yan (Student ID: 57850423) &nbsp;|&nbsp; 
+               📌 Hou Yinpu (Student ID: 60166556)</p>
+            <p><strong>🎯 Project Topic:</strong> Large-Scale Recommender Systems in Business Applications</p>
+        </div>
+        <div class="tech-list">
+            <p><strong>🛠️ Techniques Demonstrated in this Website:</strong></p>
+            <ul>
+                <li>HTML5 semantic structure & responsive design</li>
+                <li>CSS3 Flexbox, gradients, sticky navbar, media queries, card layouts</li>
+                <li>JavaScript (ES6): mobile menu toggle, interactive quiz</li>
+                <li>Multi-page website architecture with consistent styling</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- INTRODUCTION SECTION (only on homepage) -->
+    <div class="section-card">
+        <h2>📖 1. INTRODUCTION</h2>
+        
+        <h3>- What are recommender systems?</h3>
+        <p>A recommendation system is a specialized type of information filtering system, implemented to predict users preferences towards specific items or content, and deliver personalized suggestions to users based on these predictions (Resnick & Varian, 1997). The core purpose of theses system is to resolve the information overload and seek relevant content efficiently with the large datasets in order to boost user engagement rate and retention for the platforms. It is critical for digital platforms, for instance, Netflix, Amazon, and TaoBao (Sarwat & Mokbel, 2018).</p>
+        <p>As mentioned by Wikipedia contributors (2025), modern digital platforms rely heavily on the recommendation system to curate personalized experiences, four primary types of recommendation systems are widely used. The collaborative filtering, which relies on user-item interaction patterns and similarities between users or items; content-based filtering, which recommends items with similar features that user has previously preferred; hybrid systems that combine collaborative and content-based methods to mitigate limitations of individual approaches; and knowledge-based systems that use explicit domain knowledge to match user needs with item attributes (Melville & Sindhwani, n.d.).</p>
+        
+        <h3>- Why are they important in business?</h3>
+        <p>Recommender systems ensure measurable business value through countable engagement rate, conversion rate and customer retention. It enables platforms to match users with relevant content and items, which delivers personalized experiences that align with individual preferences. It results in higher sales, click-through rates (CTR), and overall user satisfaction while reducing information overload (Jannach & Jugovac, 2019). Therefore, the business company can adjust their marketing strategies based on the data.</p>
+        
+        <h3>- Historical evolution</h3>
+        <p>Recommender systems evolved from early methods like collaborative filtering and content-based filtering to hybrid frameworks. Deep learning has become the dominant approach for large-scale industrial deployment since 2025 (Wang & Liu, 2025).</p>
+        
+        <div class="references-box">
+            <p><strong>📚 References:</strong></p>
+            <p>Jannach, D., & Jugovac, M. (2019). Measuring the business value of recommender systems. ACM Computing Surveys, 52(5), 1-37. https://doi.org/10.1145/3343174</p>
+            <p>Resnick, P., & Varian, H. R. (1997). Recommender systems. Communications of the ACM, 40(3), 56-58. https://doi.org/10.1145/245108.245122</p>
+            <p>Sarwat, M., & Mokbel, M. F. (2018). Recommender systems. In Reference module in computer science and engineering. Elsevier. https://doi.org/10.1016/B978-0-12-809645-5.00033-1</p>
+            <p>Melville, P., & Sindhwani, V. (n.d.). Recommender systems. Retrieved from https://vikas.sindhwani.org/recommender.pdf</p>
+            <p>Wikipedia contributors. (2025, March 7). Recommender system. In Wikipedia, The Free Encyclopedia. Retrieved from https://en.wikipedia.org/wiki/Recommender_system</p>
+            <p>Wang, X., & Liu, Y. (2025). Deep learning recommender systems. Cambridge University Press.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+   
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+</script>
+</body>
+</html>

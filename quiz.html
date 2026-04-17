@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Quiz | Recommender Systems | CS1102</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
+        .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+        .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
+        .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
+        .nav-links a:hover { color: #60a5fa; }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; background: none; border: none; color: white; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .section-card { background: white; border-radius: 20px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; }
+        .section-card h1 { color: #0f172a; border-left: 5px solid #3b82f6; padding-left: 1rem; margin-bottom: 1.2rem; font-size: 1.8rem; }
+        .quiz-question { margin-bottom: 2rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .quiz-question p { font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem; }
+        .quiz-option { margin: 0.5rem 0; }
+        .quiz-option label { margin-left: 0.5rem; cursor: pointer; }
+        .quiz-option input { cursor: pointer; }
+        .feedback { margin-top: 0.8rem; padding: 0.5rem; border-radius: 8px; font-size: 0.9rem; }
+        .feedback.correct { background: #d1fae5; color: #065f46; }
+        .feedback.wrong { background: #fee2e2; color: #991b1b; }
+        footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
+        button { background: #3b82f6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 0.5rem; transition: background 0.2s; }
+        button:hover { background: #2563eb; }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .nav-container { justify-content: space-between; } .container { padding: 0 1rem; } }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="large-scale.html">Large-Scale</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="modern.html">Modern Tech</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="ethical.html">Ethical</a></li>
+            <li><a href="funfact.html">Fun Fact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="references.html">References</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container">
+    <div class="section-card">
+        <h1>📝 9. Quizzes</h1>
+        
+        <!-- Question 1 -->
+        <div class="quiz-question" id="q1">
+            <p>1. What is the core purpose of a recommendation system?</p>
+            <div class="quiz-option">
+                <input type="radio" name="q1" value="A" id="q1_a">
+                <label for="q1_a">A) To increase the storage capacity of a website.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q1" value="B" id="q1_b">
+                <label for="q1_b">B) To address information overload and help users discover relevant content efficiently with the large datasets. </label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q1" value="C" id="q1_c">
+                <label for="q1_c">C) To manually delete user accounts that are inactive.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q1" value="D" id="q1_d">
+                <label for="q1_d">D) To slow down the internet speed for better data security.</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="quiz-question" id="q2">
+            <p>2. Which recommendation technique relies on finding users with similar interests or purchase histories?</p>
+            <div class="quiz-option">
+                <input type="radio" name="q2" value="A" id="q2_a">
+                <label for="q2_a">A) Content-Based Filtering.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q2" value="B" id="q2_b">
+                <label for="q2_b">B) Knowledge-Based Systems.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q2" value="C" id="q2_c">
+                <label for="q2_c">C) User-based Collaborative Filtering.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q2" value="D" id="q2_d">
+                <label for="q2_d">D) Deep Learning.</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="quiz-question" id="q3">
+            <p>3. Which dimension typically defines "Large-scale" recommender systems?</p>
+            <div class="quiz-option">
+                <input type="radio" name="q3" value="A" id="q3_a">
+                <label for="q3_a">A) Serving millions to billions of users and items.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q3" value="B" id="q3_b">
+                <label for="q3_b">B) Taking several hours to generate a single recommendation.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q3" value="C" id="q3_c">
+                <label for="q3_c">C) Only working on desktop computers.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q3" value="D" id="q3_d">
+                <label for="q3_d">D) Requiring users to fill out a 10-page survey first.</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+        
+        <!-- Question 4 -->
+        <div class="quiz-question" id="q4">
+            <p>4. How do Large Language Models (LLMs) transform the user experience in recommendations?</p>
+            <div class="quiz-option">
+                <input type="radio" name="q4" value="A" id="q4_a">
+                <label for="q4_a">A) By turning systems into AI assistants that can have conversations and explain recommendations.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q4" value="B" id="q4_b">
+                <label for="q4_b">B) By automatically deleting user history every 24 hours to ensure user privacy.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q4" value="C" id="q4_c">
+                <label for="q4_c">C) By making the recommendations less accurate but faster.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q4" value="D" id="q4_d">
+                <label for="q4_d">D) By requiring users to learn a programming language.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+        
+        <!-- Question 5 -->
+        <div class="quiz-question" id="q5">
+            <p>5. What caused the "Tai Po Meat Rice" post to go viral on Threads?</p>
+            <div class="quiz-option">
+                <input type="radio" name="q5" value="A" id="q5_a">
+                <label for="q5_a">A) Users who liked the post could be paid by the restaurant owner.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q5" value="B" id="q5_b">
+                <label for="q5_b">B) The algorithm ranked it as "high value" due to massive engagement (likes/replies) triggered by exaggerated expressions.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q5" value="C" id="q5_c">
+                <label for="q5_c">C) A KOL recommended it.</label>
+            </div>
+            <div class="quiz-option">
+                <input type="radio" name="q5" value="D" id="q5_d">
+                <label for="q5_d">D) A system error forced everyone to see it.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Tong Hoi Yan, Hou Yinpu, Lui Wing Yan</p>
+</footer>
+
+<script>
+    // Correct answers
+    const answers = {
+        q1: 'B',
+        q2: 'C',
+        q3: 'A',
+        q4: 'A',
+        q5: 'B'
+    };
+    
+    // Track if each question has been answered correctly
+    const isCorrect = {
+        q1: false,
+        q2: false,
+        q3: false,
+        q4: false,
+        q5: false
+    };
+    
+    // Function to check answer for a specific question
+    function checkAnswer(questionName, selectedValue, feedbackId) {
+        // If already answered correctly, don't allow changing
+        if (isCorrect[questionName]) {
+            return;
+        }
+        
+        const feedbackDiv = document.getElementById(feedbackId);
+        
+        if (selectedValue === answers[questionName]) {
+            // Correct answer
+            feedbackDiv.innerHTML = '✅ Correct!';
+            feedbackDiv.className = 'feedback correct';
+            isCorrect[questionName] = true;
+            
+            // Disable all radio buttons in this question group
+            const radios = document.getElementsByName(questionName);
+            radios.forEach(radio => {
+                radio.disabled = true;
+            });
+        } else {
+            // Wrong answer
+            feedbackDiv.innerHTML = '❌ Wrong, please try again.';
+            feedbackDiv.className = 'feedback wrong';
+            
+            // Uncheck the selected wrong option (clear it)
+            const radios = document.getElementsByName(questionName);
+            radios.forEach(radio => {
+                if (radio.checked) {
+                    radio.checked = false;
+                }
+            });
+        }
+    }
+    
+    // Add event listeners to all radio buttons
+    const questions = ['q1', 'q2', 'q3', 'q4', 'q5'];
+    
+    questions.forEach(question => {
+        const radios = document.getElementsByName(question);
+        radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked && !isCorrect[question]) {
+                    checkAnswer(question, this.value, `feedback${question.charAt(1)}`);
+                }
+            });
+        });
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+</script>
+</body>
+</html>

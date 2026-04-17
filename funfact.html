@@ -8,8 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
         .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.3rem; font-weight: bold; background: #3b82f6; padding: 0.3rem 0.8rem; border-radius: 8px; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
         .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
         .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
         .nav-links a:hover { color: #60a5fa; }
@@ -21,22 +20,14 @@
         p { margin-bottom: 1rem; color: #334155; }
         .references-box { background: #fef9e3; padding: 1rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid #eab308; font-size: 0.85rem; }
         .references-box p { margin: 0.3rem 0; }
-        .fun-fact-box { background: #fef2f2; border-radius: 16px; padding: 1rem; margin-top: 1rem; }
-        button, .quiz-btn { background: #3b82f6; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 40px; cursor: pointer; font-weight: bold; margin-top: 1rem; transition: background 0.2s; }
-        button:hover { background: #2563eb; }
-        .two-column { display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; }
-        .two-column .text { flex: 2; }
-        .two-column .image { flex: 1; }
-        .image-container img { max-width: 100%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
-        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .container { padding: 0 1rem; } .two-column { flex-direction: column; } }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .nav-container { justify-content: space-between; } .container { padding: 0 1rem; } }
     </style>
 </head>
 <body>
 
 <header class="navbar">
     <div class="nav-container">
-       
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
@@ -46,92 +37,66 @@
             <li><a href="applications.html">Applications</a></li>
             <li><a href="ethical.html">Ethical</a></li>
             <li><a href="funfact.html">Fun Fact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="references.html">References</a></li>
         </ul>
     </div>
 </header>
 
 <main class="container">
     <div class="section-card">
-        <h1>✨ 7. FUN FACT & DISCOVERY</h1>
+        <h1>✨ 7. DISCOVERY SECTION (fun fact)</h1>
         
         <h2>Myth: My phone is secretly listening to me</h2>
-        <p>Have you ever chatted about sushi with your friends and minutes later you see many japanese restaurant advertisements in your social media? The amazing recommendation systems often pop up advertisements that are related to our demands. Therefore, many people think that their phones are listening so as to recommend more personalized advertisements to them (BBC Bitesize, 2026).</p>
+        <p>Have you ever chatted about sushi with your friends and minutes later you see many Japanese restaurant advertisements in your social media? The amazing recommendation systems often pop up advertisements that are related to our demands. Therefore, many people think that their phones are listening so as to recommend more personalized advertisements to them (BBC Bitesize, 2026).</p>
         <p>In fact, our phones are listening but the purposes are not for advertisements. For example, the iPhones are passively listening to us for detecting the words like "Hey Siri". The voice assistants in our phone mainly help us with some hand-free tasks like searching the topic of what we asked for (BBC Bitesize, 2026). Moreover, Mosseri (2025) who is the head of Instagram indicated that the Meta apps do not listen to users' private conservations. He explained that Instagram's algorithm relies on a hybrid recommendation which includes filtering and content-based filtering recommendations.</p>
         <p>Here is a fun way to check whether your phone is listening. Talking loud near your phone about a topic that is irrelevant to your interests. Then, you can check if there is any related content recommended in your social media (Cross et al., 2025).</p>
         
+        <div>
+        <div class="image" style="text-align: center;">
+         <a href="https://www.expressvpn.com/blog/is-my-phone-listening-to-me/?srsltid=AfmBOop0N0mFlh5nast9PDd1amiRAE8pvhF9HpEaiCjtVh4JvRHu0Oew" target="_blank">
+        <img src="is-my-phone-listening-to-me_simple-at-home-test-1.png" width= "500px" alt="how to check whether your phone is listening or not">
+        </a>
+        <figcaption style="font-size: 0.75rem; color: #666; text-align: center; margin-top: 0.5rem;">
+        (Cross, 2026)
+        </figcaption>
+        </div>
+
         <h2>The Internet Meme "Tai Po Meat Rice" went viral in Threads</h2>
+        <p>Threads is a popular text based social media established in 2023. It is developed by Meta and the Instagram team so this app also connects to Instagram. The young generation is the main user of it. A post in threads which praised the meat rice of Tai Po Restaurant has become viral for a few months. At that time, posts related to this restaurant generally had one thousand to twenty thousand likes. Many people went to Yuen Long and queued up before the Tai Po Restaurant opened. How did it happen? </p>
         
-        <!-- Image 2: next to the Tai Po Meat Rice content (two-column layout) -->
-        <div class="two-column">
-            <div class="text">
-                <p>A post in threads which praised the meat rice of Tai Po Restaurant has become viral for a few months. At that time, posts related to this restaurant generally had one thousand to twenty thousand likes. Many people went to Yuen Long and queued up before the Tai Po Restaurant opened. How did it happen?</p>
-                <p>The algorithm of the social media Threads is mainly composed of For You feed ranking. First, the "Tai Po Meat Rice" post enters the gather Inventory of the For You feed system. Next, the system analyzes the users behaviours which are likes, replies, profile taps, time spent, and even Instagram actions (Web Team, 2026). Due to the exaggerated praising expressions of the Tai Po Meat Rice such as "The best meat rice in Asia", many users liked and replied to the post by using similar exaggerated expressions for jokes (奶茶妹, 2025). The For You feed system ranked this post as high value and kept recommending it to other users. Thus, the Tai Po restaurant meme went viral in Threads because every post about this topic has many likes and replies. Leading to a snowball effect, the algorithm showed it to more users. The Tai Po Restaurant even opened a branch after two months.</p>
-            </div>
-            <div class="image">
+        <p>The algorithm of the social media Threads is mainly composed of For You feed ranking. First, the "Tai Po Meat Rice" post enters the gather Inventory of the For You feed system. Next, the system analyzes the users behaviours which are likes, replies, profile taps, time spent, and even Instagram actions (Web Team, 2026). Due to the exaggerated praising expressions of the Tai Po Meat Rice such as "The best meat rice in Asia", many users liked and replied to the post by using similar exaggerated expressions for jokes (奶茶妹, 2025). The For You feed system ranked this post as high value and kept recommending it to other users. Thus, the Tai Po restaurant meme went viral in Threads because every post about this topic has many likes and replies. Leading to a snowball effect, the algorithm showed it to more users. The Tai Po Restaurant even opened a branch after two months.</p>
+        <div>
+        <div class="image" style="text-align: center;">
          <a href="https://hk.finance.yahoo.com/news/大寶冰室洗版留言爆紅-或係大型社會實驗？-072556370.html" target="_blank">
-        <img src="d2cf3be0-d597-11f0-bcfb-f10c8e7e13f3.jpeg" width= "400px" alt="Tai Po Meat Rice - viral meme illustration">
+        <img src="d2cf3be0-d597-11f0-bcfb-f10c8e7e13f3.jpeg" width= "500px" alt="Tai Po Meat Rice - viral meme illustration">
         </a>
         <figcaption style="font-size: 0.75rem; color: #666; text-align: center; margin-top: 0.5rem;">
         (Yahoo財經, 2025)
         </figcaption>
-    </div>
-        
-        <div class="fun-fact-box">
-            🧠 <strong>Our Discovery (DEC Section):</strong> Through this project, we discovered that recommender systems do not simply reflect popularity—they actively shape culture and trends. The Tai Po Meat Rice phenomenon shows that engagement-based ranking algorithms can amplify local jokes into regional phenomena, which has significant business implications for viral marketing. Additionally, the myth of phones "listening for ads" taught us that people often confuse behavioral tracking (clicks, dwell time, shares) with audio surveillance. In reality, modern recommenders are so good at predicting your interests from your digital footprint that they feel like mind-readers.
         </div>
-        
-        <!-- Interactive Quiz Button (same as original design) -->
-        <button id="quizDemoBtn">🎯 Interactive: Test Your Knowledge</button>
-        <div id="quizMessage" style="margin-top: 0.8rem; font-weight: normal;"></div>
         
         <div class="references-box">
             <p><strong>📚 References:</strong></p>
             <p>BBC Bitesize. (2026, January 23). Is my phone listening to me? BBC Bitesize. https://www.bbc.co.uk/bitesize/articles/z6dmkhv</p>
-            <p>Mosseri. (2025). https://www.instagram.com/p/DPTrPAGDbZv/?img_index=2</p>
-            <p>Cross, T. (2026b, February 27). Is my phone listening to me? A step-by-step privacy check. ExpressVPN. https://www.expressvpn.com/blog/is-my-phone-listening-to-me/</p>
-            <p>奶茶妹. (2025, December 11). 元朗大寶冰室肉餅飯Threads爆紅之謎. 香港01. https://www.hk01.com/</p>
-            <p>Web Team (2026b, March 4). How does the threads algorithm work in 2026? QuickFrame. https://quickframe.mountain.com/blog/how-does-the-threads-algorithm-work/</p>
+            <p>Mosseri, A. (2025). Instagram post. https://www.instagram.com/p/DPTrPAGDbZv/?img_index=2</p>
+            <p>Cross, T. (2026, February 27). Is my phone listening to me? A step-by-step privacy check. ExpressVPN. https://www.expressvpn.com/blog/is-my-phone-listening-to-me/</p>
+            <p>Web Team. (2026, March 4). How does the Threads algorithm work in 2026? QuickFrame. https://quickframe.mountain.com/blog/how-does-the-threads-algorithm-work/</p>
+            <p>奶茶妹. (2025, December 11). 元朗大寮冰室肉餅飯Threads爆紅之謎 潮文被狂推竟同城大有關? 香港01. https://www.hk01.com/</p>
         </div>
     </div>
 </main>
 
 <footer>
-    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Tong Hoi Yan, Hou Yinpu, Lui Wing Yan</p>
 </footer>
 
 <script>
-    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
+        menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
     }
-
-    // Interactive quiz simulation (same as original design)
-    const quizBtn = document.getElementById('quizDemoBtn');
-    const quizMsg = document.getElementById('quizMessage');
-    if (quizBtn) {
-        quizBtn.addEventListener('click', () => {
-            const userAnswer = prompt("❓ Quick quiz: Which type of recommender uses 'people who liked this also liked...' ?\n(a) Content-Based (b) Collaborative Filtering (c) LLM-based");
-            if (userAnswer && (userAnswer.toLowerCase().includes('b') || userAnswer.toLowerCase().includes('collaborative'))) {
-                quizMsg.innerHTML = "✅ Correct! Collaborative Filtering relies on user-item interaction patterns. Great memory!";
-                quizMsg.style.color = "#15803d";
-            } else if (userAnswer) {
-                quizMsg.innerHTML = "❌ Not quite. The answer is Collaborative Filtering. But content-based and LLMs are also important!";
-                quizMsg.style.color = "#b91c1c";
-            } else {
-                quizMsg.innerHTML = "🤔 No answer? Check our 'Types' section above!";
-                quizMsg.style.color = "#b45309";
-            }
-            setTimeout(() => {
-                if(quizMsg.innerHTML) setTimeout(() => quizMsg.innerHTML = "", 4000);
-            }, 4000);
-        });
-    }
-
-    console.log("CS1102 Recommender System Project | Interactive Website by Lui Wing Yan, Tong Hoi Yan, Hou Yinpu");
 </script>
 </body>
 </html>

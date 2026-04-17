@@ -8,8 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
         .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.3rem; font-weight: bold; background: #3b82f6; padding: 0.3rem 0.8rem; border-radius: 8px; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
         .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
         .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
         .nav-links a:hover { color: #60a5fa; }
@@ -21,16 +20,14 @@
         p { margin-bottom: 1rem; color: #334155; }
         .references-box { background: #fef9e3; padding: 1rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid #eab308; font-size: 0.85rem; }
         .references-box p { margin: 0.3rem 0; }
-        .fun-fact-box { background: #e6f7ff; border-radius: 16px; padding: 1rem; margin-top: 1rem; }
         footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
-        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .container { padding: 0 1rem; } }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .nav-container { justify-content: space-between; } .container { padding: 0 1rem; } }
     </style>
 </head>
 <body>
 
 <header class="navbar">
     <div class="nav-container">
-       
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
@@ -40,6 +37,8 @@
             <li><a href="applications.html">Applications</a></li>
             <li><a href="ethical.html">Ethical</a></li>
             <li><a href="funfact.html">Fun Fact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="references.html">References</a></li>
         </ul>
     </div>
 </header>
@@ -49,19 +48,16 @@
         <h1>🤖 4. MODERN TECHNIQUES</h1>
         
         <h2>4.1 Deep Learning Approaches</h2>
-        <p>Deep Learning helps recommenders discover hidden and complex patterns of users habits. Models including Wide & Deep, Two-Tower Networks, and Neural Collaborative Filtering (NCF), capture complex non-linear relationships using neural networks. They improve generalization, handle high-dimensional features, and support large-scale industrial deployments.</p>
+        <p>Deep Learning helps recommenders discover hidden and complex patterns of users' habits. Models including Wide & Deep, Two-Tower Networks, and Neural Collaborative Filtering (NCF), capture complex non-linear relationships using neural networks. They improve generalization, handle high-dimensional features, and support large-scale industrial deployments.</p>
         
-        <h2>4.2 Large Language Models</h2>
+        <h2>4.2 Large Language Models.</h2>
         <p>Large Language Models (LLMs) like ChatGPT provide recommendations by understanding natural language, having conversations, and even explain why they recommend something. Together, they're transforming recommenders into AI assistants that understand your needs and have conversations with you.</p>
         <p>Large Language Models (LLMs) advance recommenders by injecting rich semantic knowledge, understanding natural user preferences, and enabling generative, conversational, and open-world recommendation (Li et al., 2024; IEEE TKDE, 2024). They unify textual content understanding and user behavior modeling in order to support zero-shot adaptation and multi-task generalization (Bao et al., 2024).</p>
         
-        <div class="fun-fact-box">
-            💡 <em>Example: LLMs can recommend a movie not just because "you watched Inception", but because "you enjoy mind-bending plots with layered storytelling".</em>
-        </div>
-        
         <div class="references-box">
             <p><strong>📚 References:</strong></p>
-            <p>IEEE TKDE. (2024). Recommender systems in the era of large language models (LLMs). IEEE Transactions on Knowledge and Data Engineering, 36(11), 6889-6907. https://doi.org/10.1109/TKDE.2024.3392335</p>
+            <p>IEEE TKDE. (2024). Recommender systems in the era of large language models (LLMs). </p>
+            <p>IEEE Transactions on Knowledge and Data Engineering, 36(11), 6889-6907. https://doi.org/10.1109/TKDE.2024.3392335</p>
             <p>Li, L., Zhang, Y., Liu, D., & Chen, L. (2024). Large language models for generative recommendation: A survey and visionary discussions. Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024), 10146-10159. https://doi.org/10.48550/arXiv.2403.17098</p>
             <p>Bao, K., Zhang, J., Lin, X., Zhang, Y., Wang, W., & Feng, F. (2024). Large language models for recommendation: Past, present, and future. Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval. https://doi.org/10.48550/arXiv.2406.03946</p>
         </div>
@@ -69,7 +65,7 @@
 </main>
 
 <footer>
-    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Tong Hoi Yan, Hou Yinpu, Lui Wing Yan</p>
 </footer>
 
 <script>

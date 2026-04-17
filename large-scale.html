@@ -8,8 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
         .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.3rem; font-weight: bold; background: #3b82f6; padding: 0.3rem 0.8rem; border-radius: 8px; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
         .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
         .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
         .nav-links a:hover { color: #60a5fa; }
@@ -17,13 +16,11 @@
         .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
         .section-card { background: white; border-radius: 20px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; }
         .section-card h1 { color: #0f172a; border-left: 5px solid #3b82f6; padding-left: 1rem; margin-bottom: 1.2rem; font-size: 1.8rem; }
-        .section-card h2 { color: #0f172a; margin: 1rem 0 0.5rem 0; font-size: 1.4rem; }
         p { margin-bottom: 1rem; color: #334155; }
-        ul { margin: 0.5rem 0 1rem 2rem; }
         .references-box { background: #fef9e3; padding: 1rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid #eab308; font-size: 0.85rem; }
         .references-box p { margin: 0.3rem 0; }
         footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
-        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .container { padding: 0 1rem; } }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .nav-container { justify-content: space-between; } .container { padding: 0 1rem; } }
     </style>
 </head>
 <body>
@@ -39,15 +36,17 @@
             <li><a href="applications.html">Applications</a></li>
             <li><a href="ethical.html">Ethical</a></li>
             <li><a href="funfact.html">Fun Fact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="references.html">References</a></li>
         </ul>
     </div>
 </header>
 
 <main class="container">
     <div class="section-card">
-        <h1>⚙️ 2. "Large-Scale"</h1>
-        <p>Large-scale recommendation systems must serve millions of users with high-quality, personalized recommendations in real time, while ingesting and processing petabytes of user interaction data daily. They require end-to-end scalability across data storage, model training, and inference to handle the scale of modern web and video platforms (Covington et al., 2016).</p>
-        <p>The major challenges for large-scale recommender systems face is the difficulties in using simple algorithms that work for small datasets due to massive data volume, high concurrent user traffic, and real-time response requirements. Key issues include data sparsity, cold-start problems for new users or items, high computational costs, low scalability, and trade-offs between recommendation accuracy and diversity (Covington et al., 2016; Jannach & Jugovac, 2019). Additionally, ensuring fairness, transparency, and user privacy remains a critical challenge in industrial deployments (Wang & Liu, 2025).</p>
+        <h1>⚙️ 2. What Does "Large-Scale" Mean?</h1>
+        <p>Large-scale recommendation systems ingesting and processing petabytes of user interaction data daily and provide service to millions of users with high-quality, personalized recommendations in real time. Therefore, they require end-to-end scalability across data storage, model training, and inference to ensure the scale of modern web and video platforms (Covington et al., 2016).</p>
+        <p>The major challenges for large-scale recommender systems is the difficulties in using simple algorithms that work for small datasets due to high concurrent user traffic, massive data volume, and real-time response requirements. Key issues from cold-start problems to data sparsity may occur for new users or items, high computational costs, low scalability, and trade-offs between recommendation accuracy and diversity (Covington et al., 2016; Jannach & Jugovac, 2019). Moreover, the ways to maintain user privacy, transparency and fairness are still be the vital challenges in industrial deployments (Wang & Liu, 2025).</p>
         
         <div class="references-box">
             <p><strong>📚 References:</strong></p>
@@ -59,7 +58,7 @@
 </main>
 
 <footer>
-    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Tong Hoi Yan, Hou Yinpu, Lui Wing Yan</p>
 </footer>
 
 <script>

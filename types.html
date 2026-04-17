@@ -8,8 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e2a3e; background-color: #f8fafc; }
         .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.3rem; font-weight: bold; background: #3b82f6; padding: 0.3rem 0.8rem; border-radius: 8px; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
         .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; list-style: none; }
         .nav-links a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
         .nav-links a:hover { color: #60a5fa; }
@@ -23,14 +22,13 @@
         .references-box { background: #fef9e3; padding: 1rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid #eab308; font-size: 0.85rem; }
         .references-box p { margin: 0.3rem 0; }
         footer { text-align: center; padding: 2rem; background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
-        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .container { padding: 0 1rem; } }
+        @media (max-width: 800px) { .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; margin-top: 1rem; gap: 0.8rem; } .nav-links.show { display: flex; } .menu-toggle { display: block; } .nav-container { justify-content: space-between; } .container { padding: 0 1rem; } }
     </style>
 </head>
 <body>
 
 <header class="navbar">
     <div class="nav-container">
-        
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
@@ -40,6 +38,8 @@
             <li><a href="applications.html">Applications</a></li>
             <li><a href="ethical.html">Ethical</a></li>
             <li><a href="funfact.html">Fun Fact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="references.html">References</a></li>
         </ul>
     </div>
 </header>
@@ -48,7 +48,7 @@
     <div class="section-card">
         <h1>🧩 3. TYPES OF RECOMMENDER SYSTEMS</h1>
         
-        <h2>1.3 Collaborative Filtering</h2>
+        <h2>3.1 Collaborative Filtering</h2>
         <p>Collaborative Filtering (CF) groups users based on similar behavior and preferences to provide personalized recommendation. CF can be classified as Memory-based. This kind of system directly uses all the raw data in memory to make recommendations, which directly compares the data. Its recommendation is to rely on similarity between users or items.</p>
         <ul>
             <li><strong>User-based Collaborative Filtering:</strong> It identifies users with similar interests or purchase histories to the target user. This could be "users who are similar to you also liked..." type of recommendations.</li>
@@ -65,14 +65,14 @@
         
         <div class="references-box">
             <p><strong>📚 References:</strong></p>
-            <p>Mishra, S., Hrudaya Kumar Tripathy, Pradeep Kumar Mallick, Arun Kumar Sangaiah, & Chae, G.-S. (2022). Cognitive big data intelligence with a metaheuristic approach. Academic Press. https://www.sciencedirect.com/book/edited-volume/9780323851176/cognitive-big-data-intelligence-with-a-metaheuristic-approach</p>
-            <p>Thorat, P., Goudar, R., & Barve, S. (2015). Survey on Collaborative Filtering, Content-based Filtering and Hybrid Recommendation System. International Journal of Computer Applications, 110(4), 975-8887. https://research.ijcaonline.org/volume110/number4/pxc3900760.pdf</p>
+            <p>Mishra, S., Hrudaya Kumar Tripathy, Pradeep Kumar Mallick, Arun Kumar Sangai, & Chae, G.-S. (2022). Cognitive big data intelligence with a metaheuristic approach. Academic Press. https://www.sciencedirect.com/book/edited-volume/9780323851176/cognitive-big-data-intelligence-with-a-metaheuristic-approach</p>
+            <p>Thorat, P., Goudar, R., & Barve, S. (2015). Survey on Collaborative Filtering, Content-based Filtering and Hybrid Recommendation System. International Journal of Computer Applications, 110(4), 975-8887. https://research.jicaonline.org/volume110/number4/pxc3900760.pdf</p>
         </div>
     </div>
 </main>
 
 <footer>
-    <p>CS1102 - Course Project - 2025/2026 Semester B | Lui Wing Yan, Tong Hoi Yan, Hou Yinpu</p>
+    <p>CS1102 - Course Project - 2025/2026 Semester B | Tong Hoi Yan, Hou Yinpu, Lui Wing Yan</p>
 </footer>
 
 <script>

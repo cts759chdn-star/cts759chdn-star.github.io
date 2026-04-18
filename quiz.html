@@ -170,7 +170,7 @@
 </footer>
 
 <script>
-    // Correct answers
+    
     const answers = {
         q1: 'B',
         q2: 'C',
@@ -179,7 +179,7 @@
         q5: 'B'
     };
     
-    // Track if each question has been answered correctly
+    
     const isCorrect = {
         q1: false,
         q2: false,
@@ -188,9 +188,9 @@
         q5: false
     };
     
-    // Function to check answer for a specific question
+    
     function checkAnswer(questionName, selectedValue, feedbackId) {
-        // If already answered correctly, don't allow changing
+        
         if (isCorrect[questionName]) {
             return;
         }
@@ -198,22 +198,22 @@
         const feedbackDiv = document.getElementById(feedbackId);
         
         if (selectedValue === answers[questionName]) {
-            // Correct answer
+           
             feedbackDiv.innerHTML = '✅ Correct!';
             feedbackDiv.className = 'feedback correct';
             isCorrect[questionName] = true;
             
-            // Disable all radio buttons in this question group
+            
             const radios = document.getElementsByName(questionName);
             radios.forEach(radio => {
                 radio.disabled = true;
             });
         } else {
-            // Wrong answer
+            
             feedbackDiv.innerHTML = '❌ Wrong, please try again.';
             feedbackDiv.className = 'feedback wrong';
             
-            // Uncheck the selected wrong option (clear it)
+            
             const radios = document.getElementsByName(questionName);
             radios.forEach(radio => {
                 if (radio.checked) {
@@ -223,7 +223,7 @@
         }
     }
     
-    // Add event listeners to all radio buttons
+    
     const questions = ['q1', 'q2', 'q3', 'q4', 'q5'];
     
     questions.forEach(question => {
@@ -237,7 +237,7 @@
         });
     });
 
-    // Mobile menu toggle
+    
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if (menuToggle) {
